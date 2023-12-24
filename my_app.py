@@ -34,8 +34,13 @@ with tab1:
         else:
             st.write(text)
         st.subheader("The translated protein:")
-        st.markdown(f'**:green[{translation(text)}]**')
-        st.download_button("Download the translated protein", translation(text), file_name="DNA-to-Protein.txt")
+        translated = translation(text)
+        if len(translated) > 500:
+            st.markdown(f'**:green[{translated[:500]}...]**')
+        else:
+            st.markdown(f'**:green[{translated}]**')
+            
+        st.download_button("Download the translated protein", translated, file_name="DNA-to-Protein.txt")
     else:
         st.write(":red[No DNA sequence is added yet !]")
 
@@ -54,8 +59,14 @@ with tab2:
         else:
             st.write(text)
         st.subheader("The reverse complement of the DNA:")
-        st.markdown(f'**:green[{reverse_complement(text)}]**')
-        st.download_button("Download the reverse complemented DNA", reverse_complement(text), file_name="Reverse-Complement-DNA.txt")
+        
+        reversed_complement = reverse_complement(text)
+        if len(reversed_complement) > 500:
+            st.markdown(f":green[{reversed_complement[:500]}...]")
+        else:
+            st.markdown(f'**:green[{reversed_complement}]**')
+            
+        st.download_button("Download the reverse complemented DNA", reversed_complement, file_name="Reverse-Complement-DNA.txt")
     else:
        st.write(":red[No DNA sequence is added yet !]") 
 
