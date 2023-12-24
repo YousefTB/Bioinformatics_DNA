@@ -2,11 +2,11 @@ from bioinformatics import *
 import streamlit as st
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.image('images/bioinformatics.jpg', use_column_width=True)
+    st.image('images/bioinformatics.jpg')
 with col2:
-    st.image('images/bioinformatics2.jpg', use_column_width=True)
+    st.image('images/bioinformatics2.jpg')
 with col3:
-    st.image('images/bioinformatics3.jpg', use_column_width=True)
+    st.image('images/bioinformatics3.jpg')
 
 st.title(":blue[Bioinformatics Application - BFCAI]")
 st.header("Welcome To Our Website")
