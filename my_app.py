@@ -122,7 +122,7 @@ with tab3:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'Good Suffix' and pattern != None:
+        elif selected == 'Good Suffix' and len(pattern) >= 1:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -151,7 +151,7 @@ with tab3:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'Boyer Moore' and pattern != None:
+        elif selected == 'Boyer Moore' and len(pattern) >= 1:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -180,7 +180,7 @@ with tab3:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'K-Meer Searching' and pattern != None:
+        elif selected == 'K-Meer Searching' and len(pattern) >= 1:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -209,7 +209,7 @@ with tab3:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'KMP Searching' and pattern != None:
+        elif selected == 'KMP Searching' and len(pattern) >= 1:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -236,7 +236,7 @@ with tab3:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'Naive Matching' and pattern != None:
+        elif selected == 'Naive Matching' and len(pattern) >= 1:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
