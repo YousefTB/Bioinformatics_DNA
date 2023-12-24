@@ -107,7 +107,7 @@ with tab3:
             
             
             if len(found) > 0:
-                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
@@ -116,7 +116,7 @@ with tab3:
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                     show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
@@ -135,7 +135,7 @@ with tab3:
             
             
             if len(found) > 0:
-                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
@@ -144,7 +144,7 @@ with tab3:
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                     show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
@@ -163,7 +163,7 @@ with tab3:
             
             
             if len(found) > 0:
-                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
@@ -172,7 +172,7 @@ with tab3:
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                     show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
@@ -191,7 +191,7 @@ with tab3:
             
             
             if len(found) > 0:
-                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
@@ -200,7 +200,7 @@ with tab3:
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                     show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
@@ -218,7 +218,7 @@ with tab3:
             
             
             if len(found) > 0:
-                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
 
@@ -226,7 +226,7 @@ with tab3:
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                     show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
@@ -245,7 +245,7 @@ with tab3:
             
             
             if len(found) > 0:
-                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
@@ -254,7 +254,7 @@ with tab3:
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                     show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
