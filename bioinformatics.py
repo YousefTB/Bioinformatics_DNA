@@ -1,6 +1,5 @@
 import numpy as np
 import bisect
-import time
 
 def translation(seq):
     dic = {"TTT" : "F", "CTT" : "L", "ATT" : "I", "GTT" : "V",
@@ -96,7 +95,6 @@ def failure_link_automation(p):
     return faliure_link
 
 def boyer_moore_bad_char(t,p):
-    start = time.time()
     found = []
     skipped = 0
     pattern_length = len(p)
@@ -124,7 +122,6 @@ def boyer_moore_bad_char(t,p):
     return info
 
 def boyer_moore_good_suffix(t,p):
-    start = time.time()
     found = []
     skipped = 0
     pattern_length = len(p)
@@ -148,11 +145,9 @@ def boyer_moore_good_suffix(t,p):
         i += alignments + 1
         
     info = {'found in':found, 'performed alignments':num_of_alignments - skipped, 'skipped alignments':skipped}
-    print("Time taken:", time.time() - start)
     return info
 
 def boyer_moore(t,p):
-    start = time.time()
     found = []
     skipped = 0
     pattern_length = len(p)
@@ -182,12 +177,10 @@ def boyer_moore(t,p):
         i += alignments + 1
         
     info = {'found in':found, 'performed alignments':num_of_alignments - skipped, 'skipped alignments':skipped}
-    print("Time taken:", time.time() - start)
     return info
 
 
 def k_meer_search(text,pattern):
-    start = time.time()
     found = []
     length = len(pattern) - 1
     num_of_alignments = len(text) - len(pattern) + 1
@@ -207,11 +200,9 @@ def k_meer_search(text,pattern):
             found.append(text_table[i][1])
             
     info = {'found in':found, 'performed alignments':found_counter, 'skipped alignments':num_of_alignments - found_counter}
-    print("Time taken:", time.time() - start)
     return info
 
 def KMP(t,p):
-    start = time.time()
     found = []
     text_length = len(t)
     pattern_length = len(p)
@@ -231,5 +222,67 @@ def KMP(t,p):
                 found.append(i-j)
             j = table[j,0]
             
-    print("Time taken:", time.time() - start)
+
     return found
+
+def approximate_matching(text,pattern):
+    t = '*' + text
+    p = '*' + pattern
+    array = np.zeros((len(p), len(t)), dtype=np.int32)
+    array[:,0] = np.arange(len(p))
+    for i in range(1,len(p)):
+        for j in range(1,len(t)):
+            delta = 1 if p[i] != t[j] else 0
+            array[i,j] = min(array[i - 1, j - 1] + delta, array[i, j - 1,] + 1, array[i - 1, j] + 1)
+
+    found = np.argwhere(array[-1] == min(array[-1])).flatten().tolist()
+    return (found, array)
+
+def interpret_solution_approximate(found_array, dp_array, index, text, pattern):
+    t = '*' + text
+    p = '*' + pattern
+    solution = []
+    j = found_array[index]
+    i = len(p) - 1
+    while(i != 0):
+        ix1 = dp_array[i, j - 1] + 1
+        ix2 = dp_array[i-1, j] + 1
+        delt = 1 if p[i] != t[j] else 0
+        ix3 = dp_array[i - 1, j - 1] + delt
+        solution.append((i,j,dp_array[i,j]))
+        if dp_array[i,j] == ix1:
+            j = j -1
+        elif dp_array[i,j] == ix2:
+            i = i - 1
+        elif dp_array[i,j] == ix3:
+            i = i - 1
+            j = j - 1
+            
+    solution = list(reversed(solution))
+    new_pattern = ''
+    new_text = t[1:solution[0][1] + 1]
+    stop = 0
+    prev_path = solution[0]
+    new_pattern += p[prev_path[0]]
+    new_text += t[prev_path[1]]
+    for i in range(1,len(solution)):
+        curr_path = solution[i]
+        if curr_path[2] > prev_path[2] and curr_path[0] == prev_path[0]:
+            new_pattern += '-'
+            new_text += t[curr_path[1]]
+            prev_path = curr_path
+            continue
+        elif curr_path[2] > prev_path[2] and curr_path[1] == prev_path[1]:
+            new_text += '-'
+            new_pattern += p[curr_path[0]]
+            prev_path = curr_path
+            continue
+        new_pattern += p[curr_path[0]]
+        new_text += t[curr_path[1]]
+        prev_path = curr_path
+
+
+    new_text += t[solution[-1][1] + 1:]
+    edits = solution[-1][2]
+    percentage = (len(pattern) - edits) / len(pattern)
+    return (new_text[solution[0][1]: solution[-1][1] + 30], new_pattern, edits, percentage, solution[0][1] - 1)
