@@ -37,7 +37,7 @@ with tab2:
     if text is not None:
         selected = -1
         st.write(text)
-        pattern = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE")
+        pattern = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None)
         with st.container():
             options = ['Naive Matching',
             'Bad Character','Good Suffix','Boyer Moore',
@@ -46,7 +46,7 @@ with tab2:
             if 'prev_t' not in st.session_state:
                 st.session_state.prev_t = None
 
-        if selected == 'Bad Character':
+        if selected == 'Bad Character' and pattern != None:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -71,7 +71,7 @@ with tab2:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'Good Suffix':
+        elif selected == 'Good Suffix' and pattern != None:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -96,7 +96,7 @@ with tab2:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'Boyer Moore':
+        elif selected == 'Boyer Moore' and pattern != None:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -121,7 +121,7 @@ with tab2:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'K-Meer Searching':
+        elif selected == 'K-Meer Searching' and pattern != none:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -146,7 +146,7 @@ with tab2:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'KMP Searching':
+        elif selected == 'KMP Searching' and pattern != None:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
@@ -168,7 +168,7 @@ with tab2:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'Naive Matching':
+        elif selected == 'Naive Matching' and pattern != None:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
