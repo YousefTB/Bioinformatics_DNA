@@ -46,7 +46,7 @@ with tab2:
     if text is not None:
         selected = -1
         st.write(text)
-        pattern = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None, key=0)
+        pattern = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None, key=6)
         with st.container():
             options = ['Naive Matching',
             'Bad Character','Good Suffix','Boyer Moore',
@@ -215,7 +215,7 @@ with tab3:
     if text is not None:
         selected = -1
         st.write(text)
-        pattern2 = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None, key=1)
+        pattern2 = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None, key=5)
         if 'prev_t2' not in st.session_state:
                 st.session_state.prev_t2 = None
         if 'cnt2' not in st.session_state:
