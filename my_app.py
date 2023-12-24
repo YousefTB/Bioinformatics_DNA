@@ -93,7 +93,7 @@ with tab3:
             if 'prev_t' not in st.session_state:
                 st.session_state.prev_t = None
 
-        if selected == 'Bad Character' and pattern != None:
+        if selected == 'Bad Character' and (pattern != None or pattern != ''):
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
