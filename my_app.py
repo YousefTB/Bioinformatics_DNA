@@ -109,6 +109,7 @@ with tab3:
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
+                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -137,6 +138,7 @@ with tab3:
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
+                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -165,6 +167,7 @@ with tab3:
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
+                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -193,6 +196,7 @@ with tab3:
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
+                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -220,6 +224,7 @@ with tab3:
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
+                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
 
                 if st.button('Next location'):
@@ -247,6 +252,7 @@ with tab3:
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
+                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
