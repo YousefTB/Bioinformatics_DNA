@@ -8,3 +8,6 @@ st.markdown("""**The biology field is intersected with many of `AI` applications
 the sequences of DNA, the translation into protein sequence and searching for `PATTERNS` !**
 """)
 st.divider()
+st.header("Searching")
+st.markdown("""**This section is for searching for patterns inside a sequence**\n
+- Upload your `.fasta` file that contains the sequence""")
