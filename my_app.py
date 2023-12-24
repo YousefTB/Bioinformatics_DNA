@@ -19,7 +19,7 @@ the sequences of DNA, the translation into protein sequence and searching for `P
 """)
 st.divider()
 st.subheader(":blue[**Tools**]")
-tab1, tab2,tab3, tab4 = st.tabs(['DNA Translation','DNA Reverse Complement', 'DNA Sequence Searching', 'Approximate Matching'])
+tab1, tab2,tab3, tab4 = st.tabs(['DNA Translation','DNA Reverse Complement', 'DNA Sequence Searching', 'DNA Approximate Searching'])
 with tab1:
     file = st.file_uploader("Fasta file", type=['fasta','fa'], key=0)
     text = None
