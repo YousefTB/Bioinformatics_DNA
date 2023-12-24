@@ -5,7 +5,7 @@ with col1:
     st.haeder("**AI**")
     st.image('images/bioinformatics.jpg')
 with col2:
-    st.header("**IS**)
+    st.header("**IS**")
     st.image('images/bioinformatics2.jpg')
 with col3:
     st.header("**FUTURE**")
