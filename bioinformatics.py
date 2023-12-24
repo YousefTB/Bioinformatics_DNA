@@ -1,6 +1,14 @@
 import numpy as np
 import bisect
 
+def reverse_complement(seq):
+    dic = {'G':'C', 'C':'G', 'A':'T', 'T':'A'}
+    reversed_seq = list(reversed(seq))
+    for i in range(len(reversed_seq)):
+        reversed_seq[i] = dic[reversed_seq[i]]
+        
+    return reversed_seq
+
 def translation(seq):
     dic = {"TTT" : "F", "CTT" : "L", "ATT" : "I", "GTT" : "V",
            "TTC" : "F", "CTC" : "L", "ATC" : "I", "GTC" : "V",
