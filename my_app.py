@@ -103,13 +103,13 @@ with tab3:
             info = boyer_moore_bad_char(text,pattern)
             found = info['found in']
             show_index = st.empty()
+            st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
             
             
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
-                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -132,13 +132,13 @@ with tab3:
             info = boyer_moore_good_suffix(text,pattern)
             found = info['found in']
             show_index = st.empty()
+            st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
             
             
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
-                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -161,13 +161,13 @@ with tab3:
             info = boyer_moore(text,pattern)
             found = info['found in']
             show_index = st.empty()
+            st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
             
             
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
-                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -190,13 +190,13 @@ with tab3:
             info = k_meer_search(text,pattern)
             found = info['found in']
             show_index = st.empty()
+            st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
             
             
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
-                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
@@ -218,13 +218,13 @@ with tab3:
             st.session_state.prev_t = pattern
             found = KMP(text,pattern)
             show_index = st.empty()
+            st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
             
             
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
-                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
 
                 if st.button('Next location'):
@@ -246,13 +246,13 @@ with tab3:
             info = naive_matching(text,pattern)
             found = info['found in']
             show_index = st.empty()
+            st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
             
             
             if len(found) > 0:
                 found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:found[st.session_state.cnt]+ len(pattern) + 30]
                 show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
-                st.write("**`Only part of the text will be shown where the pattern is found`**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
 
