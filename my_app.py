@@ -25,7 +25,7 @@ with tab1:
         st.write(":red[No DNA sequence is added yet !]")
 
 with tab2:
-    file = st.file_uploader("Fasta file", type='fasta',key=1)
+    file = st.file_uploader("Fasta file", type=['fasta','fa'],key=1)
     text = None
     if file is not None:
         text = file.getvalue().decode(encoding='utf-8')
