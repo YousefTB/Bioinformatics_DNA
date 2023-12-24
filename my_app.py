@@ -102,19 +102,22 @@ with tab3:
             st.session_state.prev_t = pattern
             info = boyer_moore_bad_char(text,pattern)
             found = info['found in']
+            show_index = st.empty()
             show_text = st.empty()
-
+            
+            
             if len(found) > 0:
-                found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
-
 
                 if st.button('Next location'):
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
@@ -127,19 +130,22 @@ with tab3:
             st.session_state.prev_t = pattern
             info = boyer_moore_good_suffix(text,pattern)
             found = info['found in']
+            show_index = st.empty()
             show_text = st.empty()
-
+            
+            
             if len(found) > 0:
-                found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
-
 
                 if st.button('Next location'):
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
@@ -152,19 +158,22 @@ with tab3:
             st.session_state.prev_t = pattern
             info = boyer_moore(text,pattern)
             found = info['found in']
+            show_index = st.empty()
             show_text = st.empty()
-
+            
+            
             if len(found) > 0:
-                found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
-
 
                 if st.button('Next location'):
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
@@ -177,19 +186,22 @@ with tab3:
             st.session_state.prev_t = pattern
             info = k_meer_search(text,pattern)
             found = info['found in']
+            show_index = st.empty()
             show_text = st.empty()
-
+            
+            
             if len(found) > 0:
-                found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
-
 
                 if st.button('Next location'):
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
@@ -201,17 +213,21 @@ with tab3:
                 st.session_state.cnt = 0
             st.session_state.prev_t = pattern
             found = KMP(text,pattern)
+            show_index = st.empty()
             show_text = st.empty()
-
+            
+            
             if len(found) > 0:
-                found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
 
                 if st.button('Next location'):
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
@@ -224,19 +240,22 @@ with tab3:
             st.session_state.prev_t = pattern
             info = naive_matching(text,pattern)
             found = info['found in']
+            show_index = st.empty()
             show_text = st.empty()
-
+            
+            
             if len(found) > 0:
-                found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                 show_text.write(found_pattern)
                 st.write(":red[**Skipped alignments:**] " + str(info['skipped alignments']))
-
 
                 if st.button('Next location'):
                     st.session_state.cnt += 1
                     if st.session_state.cnt >= len(found):
                         st.session_state.cnt = 0
-                    found_pattern = text[:found[st.session_state.cnt]] + ':blue[→]' + text[found[st.session_state.cnt]:]
+                    found_pattern = ':blue[→]' + text[found[st.session_state.cnt]:len(pattern) + 30]
+                    show_index.write(f"**Found at index {found[st.session_state.cnt]}**")
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
