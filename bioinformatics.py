@@ -118,7 +118,6 @@ def boyer_moore_bad_char(t,p):
         i += alignments + 1
         
     info = {'found in':found, 'performed alignments':num_of_alignments - skipped, 'skipped alignments':skipped}
-    print("Time taken:", time.time() - start)
     return info
 
 def boyer_moore_good_suffix(t,p):
