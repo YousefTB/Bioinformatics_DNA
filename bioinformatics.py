@@ -7,7 +7,7 @@ def reverse_complement(seq):
     for i in range(len(reversed_seq)):
         reversed_seq[i] = dic[reversed_seq[i]]
         
-    return reversed_seq
+    return ''.join(reversed_seq)
 
 def translation(seq):
     dic = {"TTT" : "F", "CTT" : "L", "ATT" : "I", "GTT" : "V",
