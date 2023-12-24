@@ -29,9 +29,13 @@ with tab1:
 
     st.subheader("This is your DNA sequence:")
     if text is not None:
-        st.write(text)
+        if len(text) > 500:
+            st.write(text[:500] + '...')
+        else:
+            st.write(text)
         st.subheader("The translated protein:")
         st.markdown(f'**:green[{translation(text)}]**')
+        st.download_button("Download the translated protein", translation(text), file_name="DNA-to-Protein.txt")
     else:
         st.write(":red[No DNA sequence is added yet !]")
 
@@ -45,9 +49,13 @@ with tab2:
 
     st.subheader("This is your DNA sequence:")
     if text is not None:
-        st.write(text)
+        if len(text) > 500:
+            st.write(text[:500] + '...')
+        else:
+            st.write(text)
         st.subheader("The reverse complement of the DNA:")
         st.markdown(f'**:green[{reverse_complement(text)}]**')
+        st.download_button("Download the reverse complemented DNA", reverse_complement(text), file_name="Reverse-Complement-DNA.txt")
     else:
        st.write(":red[No DNA sequence is added yet !]") 
 
@@ -61,7 +69,10 @@ with tab3:
     st.subheader("This is your DNA sequence:")
     if text is not None:
         selected = -1
-        st.write(text)
+        if len(text) > 500:
+            st.write(text[:500] + '...')
+        else:
+            st.write(text)
         pattern = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None, key=6)
         with st.container():
             options = ['Naive Matching',
