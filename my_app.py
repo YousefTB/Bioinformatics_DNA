@@ -19,7 +19,7 @@ the sequences of DNA, the translation into protein sequence and searching for `P
 """)
 st.divider()
 st.subheader(":blue[**Tools**]")
-tab1, tab2, tab3 = st.tabs(['DNA Translation', 'DNA Sequence Searching', 'Approximate Matching'])
+tab1, tab2,tab3, tab4 = st.tabs(['DNA Translation','DNA Reverse Complement', 'DNA Sequence Searching', 'Approximate Matching'])
 with tab1:
     file = st.file_uploader("Fasta file", type=['fasta','fa'], key=0)
     text = None
@@ -35,7 +35,23 @@ with tab1:
     else:
         st.write(":red[No DNA sequence is added yet !]")
 
+
 with tab2:
+    file = st.file_uploader("Fasta file", type=['fasta','fa'], key=7)
+    text = None
+    if file is not None:
+        text = file.getvalue().decode(encoding='utf-8')
+        text = text.split('\n')[1]
+
+    st.subheader("This is your DNA sequence:")
+    if text is not None:
+        st.write(text)
+        st.subheader("The reverse complement of the DNA:")
+        st.markdown(f'**:green[{reverse_complement(text)}]**')
+    else:
+       st.write(":red[No DNA sequence is added yet !]") 
+
+with tab3:
     file = st.file_uploader("Fasta file", type=['fasta','fa'],key=1)
     text = None
     if file is not None:
@@ -204,7 +220,9 @@ with tab2:
                 show_text.write("The pattern is not found")
     else:
         st.write(":red[No DNA sequence is added yet !]")
-with tab3:
+
+
+with tab4:
     file = st.file_uploader("Fasta file", type=['fasta','fa'],key=2)
     text = None
     if file is not None:
