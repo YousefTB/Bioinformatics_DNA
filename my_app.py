@@ -9,6 +9,7 @@ st.markdown("""**The biology field is intersected with many of `AI` applications
 the sequences of DNA, the translation into protein sequence and searching for `PATTERNS` !**
 """)
 st.divider()
+st.subheader(":blue[**Tools**]")
 tab1, tab2, tab3 = st.tabs(['DNA Translation', 'DNA Sequence Searching', 'Approximate Matching'])
 with tab1:
     file = st.file_uploader("Fasta file", type=['fasta','fa'], key=0)
