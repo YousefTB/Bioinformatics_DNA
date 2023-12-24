@@ -121,7 +121,7 @@ with tab2:
                     show_text.write(found_pattern)
             else:
                 show_text.write("The pattern is not found")
-        elif selected == 'K-Meer Searching' and pattern != none:
+        elif selected == 'K-Meer Searching' and pattern != None:
             if 'cnt' not in st.session_state:
                     st.session_state.cnt = 0
             
