@@ -2,13 +2,13 @@ from bioinformatics import *
 import streamlit as st
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.header("**AI**")
+    st.header("\t**AI**")
     st.image('images/bioinformatics.jpg')
 with col2:
-    st.header("**IS**")
+    st.header("\t**IS**")
     st.image('images/bioinformatics2.jpg')
 with col3:
-    st.header("**FUTURE**")
+    st.header("\t**FUTURE**")
     st.image('images/bioinformatics3.jpg')
 
 st.title(":blue[Bioinformatics Application - BFCAI]")
