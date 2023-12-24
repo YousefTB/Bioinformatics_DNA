@@ -254,7 +254,10 @@ with tab4:
     st.subheader("This is your DNA sequence:")
     if text is not None:
         selected = -1
-        st.write(text)
+        if len(text) > 500:
+            st.write(text[:500] + '...')
+        else:
+            st.write(text)
         pattern2 = st.text_input("**Pattern required**", placeholder="Enter your pattern to search in UPPERCASE", value=None, key=5)
         if 'prev_t2' not in st.session_state:
                 st.session_state.prev_t2 = None
