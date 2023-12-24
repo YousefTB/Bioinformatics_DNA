@@ -10,7 +10,7 @@ the sequences of DNA, the translation into protein sequence and searching for `P
 st.divider()
 tab1, tab2 = st.tabs(['DNA Translation', 'DNA Sequence Searching'])
 with tab1:
-    file = st.file_uploader("Fasta file", type=['fasta','fa], key=0)
+    file = st.file_uploader("Fasta file", type=['fasta','fa'], key=0)
     text = None
     if file is not None:
         text = file.getvalue().decode(encoding='utf-8')
