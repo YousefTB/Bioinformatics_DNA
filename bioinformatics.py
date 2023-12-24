@@ -1,6 +1,39 @@
 import numpy as np
 import bisect
 import time
+
+def translation(seq):
+    dic = {"TTT" : "F", "CTT" : "L", "ATT" : "I", "GTT" : "V",
+           "TTC" : "F", "CTC" : "L", "ATC" : "I", "GTC" : "V",
+           "TTA" : "L", "CTA" : "L", "ATA" : "I", "GTA" : "V",
+           "TTG" : "L", "CTG" : "L", "ATG" : "M", "GTG" : "V",
+           "TCT" : "S", "CCT" : "P", "ACT" : "T", "GCT" : "A",
+           "TCC" : "S", "CCC" : "P", "ACC" : "T", "GCC" : "A",
+           "TCA" : "S", "CCA" : "P", "ACA" : "T", "GCA" : "A",
+           "TCG" : "S", "CCG" : "P", "ACG" : "T", "GCG" : "A",
+           "TAT" : "Y", "CAT" : "H", "AAT" : "N", "GAT" : "D",
+           "TAC" : "Y", "CAC" : "H", "AAC" : "N", "GAC" : "D",
+           "TAA" : "*", "CAA" : "Q", "AAA" : "K", "GAA" : "E",
+           "TAG" : "*", "CAG" : "Q", "AAG" : "K", "GAG" : "E",
+           "TGT" : "C", "CGT" : "R", "AGT" : "S", "GGT" : "G",
+           "TGC" : "C", "CGC" : "R", "AGC" : "S", "GGC" : "G",
+           "TGA" : "*", "CGA" : "R", "AGA" : "R", "GGA" : "G",
+           "TGG" : "W", "CGG" : "R", "AGG" : "R", "GGG" : "G" 
+           }
+    
+    protien = ''
+    flag_start = False
+    for i in range(0,len(seq)- 2, 3):
+        if dic[seq[i:i+3]] == 'M':
+            flag_start = True
+        elif dic[seq[i:i+3]] == '*':
+            flag_start = False
+            
+        if flag_start:
+            protien = protien + dic[seq[i:i+3]]
+
+    return protien
+
 def naive_matching(t,p):
     found = []
     pattern_length = len(p)
@@ -16,7 +49,7 @@ def naive_matching(t,p):
 
 def preprocess_pattern_bad_char(p):
     rows = ['A','C','G','T']
-    table = np.zeros((len(chars), len(p)), dtype=np.int32)
+    table = np.zeros((len(rows), len(p)), dtype=np.int32)
 
     for i in range(len(rows)):
         counter = -1
@@ -153,11 +186,11 @@ def boyer_moore(t,p):
     return info
 
 
-def k_meer_search(t,p):
+def k_meer_search(text,pattern):
     start = time.time()
     found = []
-    length = len(p) - 1
-    num_of_alignments = len(t) - len(p) + 1
+    length = len(pattern) - 1
+    num_of_alignments = len(text) - len(pattern) + 1
     text_table = []
     
     for i in range(len(text) - length + 1):
@@ -169,7 +202,7 @@ def k_meer_search(t,p):
     left_occ = bisect.bisect_left(keys,pattern[:length])
     right_occ = bisect.bisect_right(keys,pattern[:length])
     for i in range(left_occ,right_occ+1):
-        if text[text_table[i][1]:text_table[i][1] + len(p)] == pattern:
+        if text[text_table[i][1]:text_table[i][1] + len(pattern)] == pattern:
             found_counter += 1
             found.append(text_table[i][1])
             
