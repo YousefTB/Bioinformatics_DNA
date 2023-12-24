@@ -11,3 +11,4 @@ st.divider()
 st.header("Searching")
 st.markdown("""**This section is for searching for patterns inside a sequence**\n
 - Upload your `.fasta` file that contains the sequence""")
+file = st.file_uploader("Fasta file", type='fasta')
