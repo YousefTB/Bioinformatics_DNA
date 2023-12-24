@@ -2,7 +2,7 @@ from bioinformatics import *
 import streamlit as st
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.haeder("**AI**")
+    st.header("**AI**")
     st.image('images/bioinformatics.jpg')
 with col2:
     st.header("**IS**")
