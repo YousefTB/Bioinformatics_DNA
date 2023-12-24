@@ -301,7 +301,7 @@ with tab4:
             show_index.write(f"**Found at index {ix}**")
             st.write("**`Only part of the text will be shown where the pattern is found`**")
             show_text = st.empty()
-            show_text.write(new_text + '\n\n' + new_pattern)
+            show_text.write(':blue[→]' + new_text + '\n\n' + new_pattern)
 
             show_per = st.empty()
             show_edits = st.empty()
@@ -314,7 +314,7 @@ with tab4:
                 new_text, new_pattern, edits, percentage, ix = interpret_solution_approximate(found, array, 
                                        st.session_state.cnt2, text, pattern2)
                 show_index.write(f"**Found at index {ix}**")
-                show_text.write(new_text + '\n\n' + new_pattern)
+                show_text.write(':blue[→]' + new_text + '\n\n' + new_pattern)
                 show_per.write(f':green[**Matching Percentage %:** ] `{percentage * 100}`')
                 show_edits.write(f':red[**Num. of edits performed:** ] {edits}')
         
